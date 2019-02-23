@@ -1,5 +1,6 @@
-BungeeCord with built in AntiBot protection. (Russian lang)
+BungeeCord-BotFilter
 ==========
+Originally Created by: [Leymooo](https://github.com/Leymooo/BungeeCord)
 
 Videos
 --------
