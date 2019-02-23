@@ -68,7 +68,7 @@ public class BotFilterThread
 
                 } catch ( Exception e )
                 {
-                    bungee.getLogger().log( Level.WARNING, "[BotFilter] Непонятная ошибка. Пожалуйста отправте ёё разработчику!", e );
+                    bungee.getLogger().log( Level.WARNING, "[BotFilter] An exception is occurred. Please report it to the developer!", e );
                 } finally
                 {
                     if ( !TO_REMOVE_SET.isEmpty() )

@@ -325,8 +325,8 @@ public class BotFilter
         Logger logger = BungeeCord.getInstance().getLogger();
         try
         {
-            logger.log( Level.INFO, "[BotFilter] Проверяю наличее обновлений" );
-            URL url = new URL( "https://raw.githubusercontent.com/Leymooo/BungeeCord/master/version.txt" );
+            logger.log( Level.INFO, "[BotFilter] Checking for updates..." );
+            URL url = new URL( "https://raw.githubusercontent.com/maythiwat/BungeeCord-BotFilter/master/version.txt" );
             URLConnection conn = url.openConnection();
             conn.setConnectTimeout( 1200 );
             try ( BufferedReader in = new BufferedReader(
@@ -335,20 +335,20 @@ public class BotFilter
                 if ( !in.readLine().trim().equalsIgnoreCase( Settings.IMP.BOT_FILTER_VERSION ) )
                 {
 
-                    logger.log( Level.INFO, "§c[BotFilter] §aНайдена новая версия!" );
-                    logger.log( Level.INFO, "§c[BotFilter] §aПожалуйста обновитесь!" );
+                    logger.log( Level.INFO, "§c[BotFilter] §aNew update available." );
+                    logger.log( Level.INFO, "§c[BotFilter] §aPlease update to lastest version." );
                     if ( startup )
                     {
                         Thread.sleep( 3500l );
                     }
                 } else
                 {
-                    logger.log( Level.INFO, "[BotFilter] Обновлений не найдено!" );
+                    logger.log( Level.INFO, "[BotFilter] You are using lastest version!" );
                 }
             }
         } catch ( IOException | InterruptedException ex )
         {
-            logger.log( Level.WARNING, "[BotFilter] Не могу проверить обновление", ex );
+            logger.log( Level.WARNING, "[BotFilter] Can't check for updates.", ex );
         }
     }
 

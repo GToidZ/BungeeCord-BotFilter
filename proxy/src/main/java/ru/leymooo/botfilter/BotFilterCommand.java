@@ -25,14 +25,14 @@ public class BotFilterCommand extends Command
         if ( args.length == 0 )
         {
             sender.sendMessage( "§r--------------- §bBotFilter §cv" + Settings.IMP.BOT_FILTER_VERSION + "§r-----------------" );
-            sender.sendMessage( "§r> §lbotfilter reload §6- §aПерезагружить конфиг" );
-            sender.sendMessage( "§r> §lbotfilter stat §6- §aПоказать статистику" );
+            sender.sendMessage( "§r> §lbotfilter reload §6- §aReload Configuration" );
+            sender.sendMessage( "§r> §lbotfilter stat §6- §aShow statistics" );
             sender.sendMessage( "§r--------------- §bBotFilter §r-----------------" );
         } else if ( args[0].equalsIgnoreCase( "reload" ) )
         {
             BungeeCord.getInstance().getBotFilter().disable();
             BungeeCord.getInstance().setBotFilter( new BotFilter( false ) );
-            sender.sendMessage( "§aКоманда выполнена" );
+            sender.sendMessage( "§aReloaded Successfully." );
         } else if ( args[0].equalsIgnoreCase( "stat" ) || args[0].equalsIgnoreCase( "stats" ) || args[0].equalsIgnoreCase( "info" ) )
         {
             sendStat( sender );
@@ -42,10 +42,11 @@ public class BotFilterCommand extends Command
     private void sendStat(CommandSender sender)
     {
         BotFilter botFilter = BungeeCord.getInstance().getBotFilter();
-        sender.sendMessage( "§r----------------- §bBotFilter §cv" + Settings.IMP.BOT_FILTER_VERSION + " §r-----------------" );
-        sender.sendMessage( "§r> §lОбнаружена атака: " + ( botFilter.isUnderAttack() ? "§cДа" : "§aНет" ) );
-        sender.sendMessage( "§r> §lБотов на проверке: " + botFilter.getOnlineOnFilter() );
-        sender.sendMessage( "§r> §lПрошло проверку: " + botFilter.getUsersCount() );
-        sender.sendMessage( "§r> §lСкачать BotFilter: http://www.rubukkit.org/threads/137038/" );
+        sender.sendMessage( "§r----------------- §bBotFilter (maythiwat's build) §cv" + Settings.IMP.BOT_FILTER_VERSION + " §r-----------------" );
+        sender.sendMessage( "§r> §lAttack detected: " + ( botFilter.isUnderAttack() ? "Yes" : "§aNo" ) );
+        sender.sendMessage( "§r> §lChecking Player(s): " + botFilter.getOnlineOnFilter() );
+        sender.sendMessage( "§r> §lNon-Bot Player(s): " + botFilter.getUsersCount() );
+        sender.sendMessage( "§r> §lSource Code: https://github.com/maythiwat/BungeeCord-BotFilter/" );
+        sender.sendMessage( "§r> §lOriginal Author: http://www.rubukkit.org/threads/137038/" );
     }
 }

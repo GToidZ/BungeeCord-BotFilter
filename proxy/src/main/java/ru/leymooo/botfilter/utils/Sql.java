@@ -63,7 +63,7 @@ public class Sql
                 Class.forName( "org.sqlite.JDBC" );
                 connectToDatabase( "JDBC:sqlite:BotFilter/database.db", null, null );
             }
-            logger.log( Level.INFO, "[BotFilter] Подключено ({0} мс)", System.currentTimeMillis() - start );
+            logger.log( Level.INFO, "[BotFilter] Database Connected ({0} ms)", System.currentTimeMillis() - start );
             createTable();
             clearOldUsers();
             loadUsers();
@@ -116,7 +116,7 @@ public class Sql
         {
             try ( PreparedStatement statement = connection.prepareStatement( "DELETE FROM `Users` WHERE `LastCheck` < " + until + ";" ) )
             {
-                logger.log( Level.INFO, "[BotFilter] Очищено {0} аккаунтов", statement.executeUpdate() );
+                logger.log( Level.INFO, "[BotFilter] {0} account(s) cleared", statement.executeUpdate() );
             }
         }
     }
@@ -139,7 +139,7 @@ public class Sql
                 botFilter.saveUser( name, IPUtils.getAddress( ip ) );
                 i++;
             }
-            logger.log( Level.INFO, "[BotFilter] Белый список игроков успешно загружен ({0})", i );
+            logger.log( Level.INFO, "[BotFilter] Player whitelist successfully loaded ({0})", i );
         }
     }
 
@@ -190,7 +190,7 @@ public class Sql
                     }
                 } catch ( SQLException ex )
                 {
-                    logger.log( Level.WARNING, "[BotFilter] Не могу выполнить запрос к базе данных", ex );
+                    logger.log( Level.WARNING, "[BotFilter] Could not execute database query", ex );
                     logger.log( Level.WARNING, sql );
                     executor.execute( () -> setupConnect() );
                 }
@@ -209,7 +209,7 @@ public class Sql
             } catch ( SQLException ex )
             {
                 setupConnect();
-                logger.log( Level.WARNING, "[BotFilter] Не могу очистить пользователей", ex );
+                logger.log( Level.WARNING, "[BotFilter] Unable to clean-up.", ex );
             }
         }
     }

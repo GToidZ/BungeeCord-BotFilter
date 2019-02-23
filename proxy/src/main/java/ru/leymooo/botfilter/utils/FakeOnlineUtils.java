@@ -29,7 +29,7 @@ public class FakeOnlineUtils
             multiple = Float.parseFloat( boost );
         } catch ( NumberFormatException e )
         {
-            BungeeCord.getInstance().getLogger().log( Level.WARNING, "[BotFilter] Не могу активировать фейк онлайн: {0}", e.getMessage() );
+            BungeeCord.getInstance().getLogger().log( Level.WARNING, "[BotFilter] Can't boost fake online-player count: {0}", e.getMessage() );
             return;
         }
         enabled = true;
