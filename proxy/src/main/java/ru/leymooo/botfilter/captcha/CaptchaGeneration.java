@@ -54,7 +54,7 @@ public class CaptchaGeneration
         ThreadPoolExecutor ex = (ThreadPoolExecutor) executor;
         while ( ex.getActiveCount() != 0 )
         {
-            BungeeCord.getInstance().getLogger().log( Level.INFO, "[BotFilter] Generate Captcha [{0}/900]", 900 - ex.getQueue().size() - ex.getActiveCount() );
+            BungeeCord.getInstance().getLogger().log( Level.INFO, "[BotFilter] Generating Captcha [{0}/900]", 900 - ex.getQueue().size() - ex.getActiveCount() );
             try
             {
                 Thread.sleep( 1000l );

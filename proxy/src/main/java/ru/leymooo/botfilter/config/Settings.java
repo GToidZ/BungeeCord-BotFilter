@@ -13,17 +13,17 @@ public class Settings extends Config
 
     @Comment(
             {
+                "BungeeCord-BotFiler (maythiwat's build)", 
+                "https://github.com/maythiwat/BungeeCord-BotFilter", 
                 "Any bugs or feature request, Please submit an issue in github."
             })
 
-
-    @Comment("Help & Support: BotFilter <maythiwat's build> (EN/TH)")
     @Final
     public final String ISSUES = "https://github.com/maythiwat/BungeeCord-BotFilter/issues";
     @Final
     public final String HELP = "https://github.com/maythiwat/BungeeCord-BotFilter";
 
-    @Comment("Help & Support: Original BotFilter (RU)")
+    @Comment("Original BotFilter (RU)")
     @Final
     public final String ISSUES_RU = "https://github.com/Leymooo/BungeeCord/issues";
     @Final
@@ -35,7 +35,7 @@ public class Settings extends Config
     @Create
     public MESSAGES MESSAGES;
 
-    @Comment("Do not use '\\ n', use% nl%")
+    @Comment("Do not use '\\ n', use %nl%")
     public static class MESSAGES
     {
 

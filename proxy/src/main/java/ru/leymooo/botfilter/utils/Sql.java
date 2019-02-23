@@ -52,7 +52,7 @@ public class Sql
             {
                 return;
             }
-            logger.info( "[BotFilter] Подключаюсь к датабазе..." );
+            logger.info( "[BotFilter] Connecting to database..." );
             long start = System.currentTimeMillis();
             if ( Settings.IMP.SQL.STORAGE_TYPE.equalsIgnoreCase( "mysql" ) )
             {

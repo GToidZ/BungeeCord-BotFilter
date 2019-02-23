@@ -89,7 +89,7 @@ public class BotFilter
         {
             if ( connector.getUserConnection() != null )
             {
-                connector.getUserConnection().disconnect( "§c[BotFilter] §aПерезагрузка фильтра" );
+                connector.getUserConnection().disconnect( "§c[BotFilter] §aFilter reload" );
             }
             connector.setState( CheckState.FAILED );
         }
