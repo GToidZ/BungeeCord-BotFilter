@@ -337,6 +337,7 @@ public class BotFilter
 
                     logger.log( Level.INFO, "§c[BotFilter] §aNew update available." );
                     logger.log( Level.INFO, "§c[BotFilter] §aPlease update to lastest version." );
+                    logger.log( Level.INFO, "§c[BotFilter] §aDownload from Jenkins: http://ci.demza.info/job/BungeeCord-BotFilter/" );
                     if ( startup )
                     {
                         Thread.sleep( 3500l );
