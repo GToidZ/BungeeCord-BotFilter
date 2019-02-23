@@ -87,8 +87,8 @@ public class Settings extends Config
                     "The filename must end with .mmdb or be packed in .tar.gz"
                 })
         public String GEOIP_DOWNLOAD_URL = "http://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.tar.gz";
-        @Comment("Разрешённые странны")
-        public List<String> ALLOWED_COUNTRIES = Arrays.asList( "RU", "UA", "BY", "KZ", "EE", "MD", "KG", "AZ", "LT", "LV", "GE", "PL" );
+        @Comment("Allowed country (default: Asean)")
+        public List<String> ALLOWED_COUNTRIES = Arrays.asList( "TH", "LA", "MM", "KH", "VN", "PH", "MY", "SG", "ID", "BN" );
     }
 
     @Create
