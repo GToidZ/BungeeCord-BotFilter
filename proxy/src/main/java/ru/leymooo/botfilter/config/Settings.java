@@ -149,17 +149,17 @@ public class Settings extends Config
 
     @Comment(
             {
-                "Настройка как именно будет работать защита",
-                "0 - Только проверка с помошью капчи",
-                "1 - Проверка на падение + капча",
-                "2 - Проверка на падение, если провалилась, то капча"
+                "Setting how protection will work",
+                "0 - Only check with captcha",
+                "1 - Drop check + captcha",
+                "2 - Drop check, if failed, then captcha"
             })
     public static class PROTECTION
     {
 
-        @Comment("Режим работы пока нет атаки")
+        @Comment("Operation mode when no attack")
         public int NORMAL = 2;
-        @Comment("Режим работы во время атаки")
+        @Comment("Operation mode during the attack")
         public int ON_ATTACK = 1;
         /*
         @Comment(
@@ -177,15 +177,15 @@ public class Settings extends Config
     @Create
     public SQL SQL;
 
-    @Comment("Настройка датабазы")
+    @Comment("Database Setup")
     public static class SQL
     {
 
-        @Comment("Тип датабазы. sqlite или mysql")
+        @Comment("Database type. sqlite or mysql")
         public String STORAGE_TYPE = "sqlite";
-        @Comment("Через сколько дней удалять игроков из датабазы, которые прошли проверку и больше не заходили. 0 или меньше чтобы отключить")
+        @Comment("After how many days to remove players from the database, which have been tested and no longer entered. 0 or less to disable")
         public int PURGE_TIME = 14;
-        @Comment("Настройки для mysql")
+        @Comment("Settings for mysql")
         public String HOSTNAME = "127.0.0.1";
         public int PORT = 3306;
         public String USER = "user";
@@ -195,33 +195,33 @@ public class Settings extends Config
 
     @Comment(
             {
-                "Сколько игроков/ботов должно зайти за 1 минуту, чтобы включилась защита",
-                "Рекомендуемые параметры когда нет рекламы: ",
-                "До 150 онлайна - 25, до 250 - 30, до 350 - 35, до 550 - 40,45, выше - подстраивать под себя ",
-                "Во время рекламы или когда токо, токо поставили защиту рекомендуется повышать эти значения"
+                "How many players / bots should go in 1 minute for protection to be activated",
+                "Recommended options when there is no advertising: ",
+                "Up to 150 online - 25, up to 250 - 30, up to 350 - 35, up to 550 - 40.45, above - adjust to yourself ",
+                "It is recommended to increase these values ​​during an advertisement or when a current is flowing."
             })
     public int PROTECTION_THRESHOLD = 30;
 
-    @Comment("Как долго активна автоматическая защита? В миллисекундах. 1 сек = 1000")
+    @Comment("How long is automatic protection active? In milliseconds. 1 second = 1000")
     public int PROTECTION_TIME = 120000;
 
-    @Comment("Проверять ли на бота при заходе на сервер во время бот атаки, не зависимо проходил ли проверку или нет")
+    @Comment("Check whether the bot on entering the server during a bot attack, regardless of whether the check passed or not")
     public boolean FORCE_CHECK_ON_ATTACK = true;
 
-    @Comment("Показывать ли онлайн с фильтра")
+    @Comment("Show online with filter")
     public boolean SHOW_ONLINE = true;
 
-    @Comment("Сколько времени есть у игрока чтобы пройти защиту. В миллисекундах. 1 сек = 1000")
+    @Comment("How much time does the player have to go through the defense. In milliseconds. 1 second = 1000")
     public int TIME_OUT = 12700;
 
     @Comment(
             {
-                "Включить/Отключить ли совместимость со старыми плагинами, которые используют ScoreBoard на бандже?",
-                "Поставте false, если есть проблемы с новыми плагинами."
+                "Enable / Disable compatibility with old plugins that use ScoreBoard on a bungee?",
+                "Set to false if there are problems with new plugins."
             })
     public boolean FIX_SCOREBOARDS = true;
 
-    @Comment("Включить ли фикс от 'Team 'xxx' already exist in this scoreboard'")
+    @Comment("Fix for: 'Team 'xxx' already exist in this scoreboard'")
     public boolean FIX_SCOREBOARD_TEAMS = true;
 
     public void reload(File file)
