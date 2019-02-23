@@ -13,68 +13,78 @@ public class Settings extends Config
 
     @Comment(
             {
-                "Все ошибки, баги, предложения и прочее просьба писать на гитхабе "
+                "Any bugs or feature request, Please submit an issue in github."
             })
+
+
+    @Comment("Help & Support: BotFilter <maythiwat's build> (EN/TH)")
     @Final
-    public final String ISSUES = "https://github.com/Leymooo/BungeeCord/issues";
+    public final String ISSUES = "https://github.com/maythiwat/BungeeCord-BotFilter/issues";
     @Final
-    public final String HELP = "http://www.rubukkit.org/threads/137038/";
+    public final String HELP = "https://github.com/maythiwat/BungeeCord-BotFilter";
+
+    @Comment("Help & Support: Original BotFilter (RU)")
+    @Final
+    public final String ISSUES_RU = "https://github.com/Leymooo/BungeeCord/issues";
+    @Final
+    public final String HELP_RU = "http://www.rubukkit.org/threads/137038/";
+
     @Final
     public String BOT_FILTER_VERSION = "3.6.3";
 
     @Create
     public MESSAGES MESSAGES;
 
-    @Comment("Не используйте '\\n', используйте %nl%")
+    @Comment("Do not use '\\ n', use% nl%")
     public static class MESSAGES
     {
 
         public String PREFIX = "&b&lBot&d&lFilter";
-        public String CHECKING = "%prefix%&7>> &aОжидайте завершения проверки...";
-        public String CHECKING_CAPTCHA = "%prefix%&7>> &aВведите номер с картинки в чат";
-        public String CHECKING_CAPTCHA_WRONG = "%prefix%&7>> &cВы ввели капчу неправильно, пожалуйста попробуйте ещё раз. У вас &a%s &c%s";
-        public String SUCCESSFULLY = "%prefix%&7>> &aПроверка пройдена, приятной игры";
-        public String KICK_MANY_CHECKS = "%prefix%%nl%%nl%&cС вашего айпи замечена подозрительная активность%nl%%nl%&6Повторите попытку через 10 минут";
-        public String KICK_NOT_PLAYER = "%prefix%%nl%%nl%&cВы не прошли проверку, возможно вы бот%nl%&7&oЕсли это не так, пожалуйста повторите попытку";
-        public String KICK_COUNTRY = "%prefix%%nl%%nl%&cВаша страна запрещена на серверве";
-        public String KICK_BIG_PING = "%prefix%%nl%%nl%&cУ вас очень высокий пинг, скорее всего вы бот";
+        public String CHECKING = "%prefix%&7>> &aОPlease wait...";
+        public String CHECKING_CAPTCHA = "%prefix%&7>> &aEnter the number from the image in the chat.";
+        public String CHECKING_CAPTCHA_WRONG = "%prefix%&7>> &cYou entered the captcha incorrectly, please try again. У вас &a%s &c%s";
+        public String SUCCESSFULLY = "%prefix%&7>> &aCheck passed, enjoy the game.";
+        public String KICK_MANY_CHECKS = "%prefix%%nl%%nl%&cSuspicious activity noticed from your IP Address%nl%%nl%&6Try again in 10 minutes.";
+        public String KICK_NOT_PLAYER = "%prefix%%nl%%nl%&cYou did not pass the test, maybe you are a bot%nl%&7&oIf it is not, please try again.";
+        public String KICK_COUNTRY = "%prefix%%nl%%nl%&cYour country is banned on the server.";
+        public String KICK_BIG_PING = "%prefix%%nl%%nl%&cYou have a very high ping, most likely you are a bot.";
         @Comment(
                 {
-                    "Title%nl%Subtitle", "Оставьте пустым, чтобы отключить( прм: CHECKING_TITLE = \"\" )",
-                    "Отключение титлов может немного улучшить производительность"
+                    "Title%nl%Subtitle", "Leave blank to disable ( edit: CHECKING_TITLE = \"\" )",
+                    "Turning off titles can slightly improve performance."
                 })
-        public String CHECKING_TITLE = "&r&lBot&b&lFilter%nl%&aИдёт проверка";
-        public String CHECKING_TITLE_SUS = "&rПроверка пройдена%nl%&aПриятной игры";
-        public String CHECKING_TITLE_CAPTCHA = " %nl%&rВведите капчу в чат!";
+        public String CHECKING_TITLE = "&r&lBot&b&lFilter%nl%&aChecking...";
+        public String CHECKING_TITLE_SUS = "&rCheck passed%nl%&Have a nice game";
+        public String CHECKING_TITLE_CAPTCHA = " %nl%&rEnter captcha in chat!";
     }
 
     @Create
     public GEO_IP GEO_IP;
 
-    @Comment("Включить или отключить GeoIp")
+    @Comment("Enable or Disable GeoIp")
     public static class GEO_IP
     {
 
         @Comment(
                 {
-                    "Когда работает проверка",
-                    "0 - Всегда",
-                    "1 - Только во время бот атаки",
-                    "2 - Отключить"
+                    "When verification is working",
+                    "0 - Always",
+                    "1 - Only during the bot attack",
+                    "2 - Never"
                 })
         public int MODE = 1;
         @Comment(
         {
-            "Как именно работает GeoIp",
-            "0 - White list(Зайти могут только те страны, которые есть в списке)",
-            "1 - Black list(Зайти могут только те страны, которых нет в списке)"
+            "How exactly does GeoIp work",
+            "0 - White list(Only those countries in the list can enter)",
+            "1 - Black list(Only countries that are not in the list can enter)"
         })
         public int TYPE = 0;
         @Comment(
                 {
-                    "Откуда качать GEOIP",
-                    "Меняйте ссылку если по какой-то причине не качается по этой",
-                    "Файл должен заканчиваться на .mmdb или быть запакован в .tar.gz"
+                    "URL to download GEOIP",
+                    "Change the link if it does not working.",
+                    "The filename must end with .mmdb or be packed in .tar.gz"
                 })
         public String GEOIP_DOWNLOAD_URL = "http://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.tar.gz";
         @Comment("Разрешённые странны")
@@ -84,61 +94,61 @@ public class Settings extends Config
     @Create
     public PING_CHECK PING_CHECK;
 
-    @Comment("Включить или отключить проверку на высокий пинг")
+    @Comment("Enable or disable high ping checking")
     public static class PING_CHECK
     {
 
         @Comment(
                 {
-                    "Когда работает проверка",
-                    "0 - Всегда",
-                    "1 - Только во время бот атаки",
-                    "2 - Отключить"
+                    "When verification is working",
+                    "0 - Always",
+                    "1 - Only during the bot attack",
+                    "2 - Never"
                 })
         public int MODE = 1;
-        @Comment("Максимальный допустимый пинг")
+        @Comment("Maximum allowed ping")
         public int MAX_PING = 350;
     }
 
     @Create
     public SERVER_PING_CHECK SERVER_PING_CHECK;
 
-    @Comment("Включить или отключить проверку на прямое подключение")
+    @Comment("Enable or disable check for direct connection")
     public static class SERVER_PING_CHECK
     {
 
         @Comment(
                 {
-                    "Когда работает проверка",
-                    "0 - Всегда",
-                    "1 - Только во время бот атаки",
-                    "2 - Отключить",
-                    "По умолчанию отключено, по скольку работает не очень стабильно, во время сильных атак"
+                    "When verification is working",
+                    "0 - Always",
+                    "1 - Only during the bot attack",
+                    "2 - Never",
+                    "Disabled by default, since it is not very stable, during strong attacks."
                 })
         public int MODE = 2;
-        @Comment("В течении какого времени можно заходить на сервер после получения мотд сервера")
+        @Comment("How long delay to connect server after receiving the motd server")
         public int CACHE_TIME = 12;
         public List<String> KICK_MESSAGE = new ArrayList()
         {
             {
                 add( "%nl%" );
                 add( "%nl%" );
-                add( "&cВы были кикнуты! Не используйте прямое подключение" );
+                add( "&cYou were kicked! Do not use direct connection." );
                 add( "%nl%" );
                 add( "%nl%" );
-                add( "&bДля того чтобы зайти на сервер:" );
+                add( "&bTo login to the server:" );
                 add( "%nl%" );
-                add( "&71) &rДобавте сервер в &lсписок серверов." );
+                add( "&71) &rAdd server to server list." );
                 add( "%nl%" );
-                add( "&lНаш айпи &8>> &b&lIP" );
-                add( "%nl%" );
-                add( "%nl%" );
-                add( "&72) &rОбновите список серверов. " );
-                add( "%nl%" );
-                add( "&oЧтобы его обновить нажмите кнопку &c&lОбновить &r&oили &c&lRefresh" );
+                add( "&lOur Server IP &8>> &b&lmc.example.org" );
                 add( "%nl%" );
                 add( "%nl%" );
-                add( "&73) &rПодождите &c1-3&r секунды и заходите!" );
+                add( "&72) &rUpdate server list. " );
+                add( "%nl%" );
+                add( "&oTo update it, click &c&lRefresh" );
+                add( "%nl%" );
+                add( "%nl%" );
+                add( "&73) &rWait &c1-3&r seconds then join the server again." );
 
             }
         };
