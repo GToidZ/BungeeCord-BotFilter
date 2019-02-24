@@ -33,7 +33,8 @@ public class BungeeCordLauncher
 
         BungeeCord bungee = new BungeeCord();
         ProxyServer.setInstance( bungee );
-        bungee.getLogger().log( Level.WARNING, String.format("Starting BungeeCord-BotFilter (maythiwat\'s build) %s", bungee.getGameVersion()) );
+        bungee.getLogger().log( Level.WARNING, "Starting BungeeCord-BotFilter (maythiwat\'s build)");
+        bungee.getLogger().log( Level.WARNING, String.format("Based on BungeeCord %s", bungee.getGameVersion()) );
         bungee.getLogger().log( Level.WARNING, "Jenkins: http://ci.demza.info/job/BungeeCord-BotFilter/" );
         bungee.getLogger().log( Level.WARNING, "Source Code: https://github.com/maythiwat/BungeeCord-BotFilter" );
         bungee.start();

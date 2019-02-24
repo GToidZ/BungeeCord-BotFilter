@@ -10,6 +10,9 @@ public class Settings extends Config
 
     @Ignore
     public static final Settings IMP = new Settings();
+    
+    @Final
+    public String BOT_FILTER_VERSION = "4.0.0";
 
     @Comment(
             {
@@ -28,9 +31,6 @@ public class Settings extends Config
     public final String ISSUES_RU = "https://github.com/Leymooo/BungeeCord/issues";
     @Final
     public final String HELP_RU = "http://www.rubukkit.org/threads/137038/";
-
-    @Final
-    public String BOT_FILTER_VERSION = "3.6.3";
 
     @Create
     public MESSAGES MESSAGES;

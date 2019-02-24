@@ -11,7 +11,7 @@ public class BotFilterCommand extends Command
 
     public BotFilterCommand()
     {
-        super( "botfilter", null, "bf", "antibot", "gg" );
+        super( "botfilter", null, "bf", "antibot", "bot" );
     }
 
     @Override
@@ -24,9 +24,9 @@ public class BotFilterCommand extends Command
         }
         if ( args.length == 0 )
         {
-            sender.sendMessage( "§r--------------- §bBotFilter §cv" + Settings.IMP.BOT_FILTER_VERSION + "§r-----------------" );
-            sender.sendMessage( "§r> §lbotfilter reload §6- §aReload Configuration" );
-            sender.sendMessage( "§r> §lbotfilter stat §6- §aShow statistics" );
+            sender.sendMessage( "§bBotFilter (maythiwat's build) §c" + Settings.IMP.BOT_FILTER_VERSION);
+            sender.sendMessage( "§8> §7botfilter stat §8- §7Show statistics" );
+            sender.sendMessage( "§8> §7botfilter reload §8- §7Reload Configuration" );
             sender.sendMessage( "§r--------------- §bBotFilter §r-----------------" );
         } else if ( args[0].equalsIgnoreCase( "reload" ) )
         {
@@ -42,11 +42,10 @@ public class BotFilterCommand extends Command
     private void sendStat(CommandSender sender)
     {
         BotFilter botFilter = BungeeCord.getInstance().getBotFilter();
-        sender.sendMessage( "§r----------------- §bBotFilter (maythiwat's build) §cv" + Settings.IMP.BOT_FILTER_VERSION + " §r-----------------" );
-        sender.sendMessage( "§r> §lAttack detected: " + ( botFilter.isUnderAttack() ? "Yes" : "§aNo" ) );
-        sender.sendMessage( "§r> §lChecking Player(s): " + botFilter.getOnlineOnFilter() );
-        sender.sendMessage( "§r> §lNon-Bot Player(s): " + botFilter.getUsersCount() );
-        sender.sendMessage( "§r> §lSource Code: https://github.com/maythiwat/BungeeCord-BotFilter/" );
-        sender.sendMessage( "§r> §lOriginal Author: http://www.rubukkit.org/threads/137038/" );
+        sender.sendMessage( "§bBotFilter (maythiwat's build) §c" + Settings.IMP.BOT_FILTER_VERSION);
+        sender.sendMessage( "§8> §7Github: §ehttps://github.com/maythiwat/BungeeCord-BotFilter/" );
+        sender.sendMessage( "§8> §7Attack detected: " + ( botFilter.isUnderAttack() ? "§cYes" : "§aNo" ) );
+        sender.sendMessage( "§8> §7Checking Player(s): §e" + botFilter.getOnlineOnFilter() );
+        sender.sendMessage( "§8> §7Non-Bot Player(s): §e" + botFilter.getUsersCount() );
     }
 }
