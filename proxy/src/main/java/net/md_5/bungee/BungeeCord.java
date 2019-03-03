@@ -173,9 +173,6 @@ public class BungeeCord extends ProxyServer
     private final ModuleManager moduleManager = new ModuleManager();
 
     @Getter
-    private String customBungeeName; //BotFilter
-
-    @Getter
     @Setter
     private BotFilter botFilter; //BotFilter
 
@@ -267,9 +264,6 @@ public class BungeeCord extends ProxyServer
         {
             ResourceLeakDetector.setLevel( ResourceLeakDetector.Level.DISABLED ); // Eats performance
         }
-
-        String nameProperty = System.getProperty( "bungeeName" ); // BotFilter
-        customBungeeName = ( nameProperty == null ? getName() : nameProperty ) + " " + getGameVersion(); // BotFilter
 
         this.botFilter = new BotFilter( true ); //Hook BotFilter into Bungee
         new FakeOnlineUtils(); //Init fake online
@@ -517,7 +511,7 @@ public class BungeeCord extends ProxyServer
     @Override
     public String getName()
     {
-        return "BungeeCord-BotFilter (maythiwat\'s build)";
+        return "BungeeCord-BotFilter";
     }
 
     @Override

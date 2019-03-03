@@ -94,8 +94,8 @@ public class QueryHandler extends SimpleChannelInboundHandler<DatagramPacket>
                     // Short response
                     writeString( out, listener.getMotd() ); // MOTD
                     writeString( out, "SMP" ); // Game Type
-                    writeString( out, "BotFilter_by_vk.com/Leymooo_s" ); // World Name //BotFilter
-                    writeNumber( out, bungee.getOnlineCountBF( true ) ); // Online Count//BotFilter
+                    writeString( out, "BungeeCord_BotFilter" ); // World Name //BotFilter
+                    writeNumber( out, bungee.getOnlineCountBF(true) ); // Online Count//BotFilter
                     writeNumber( out, listener.getMaxPlayers() ); // Max Players
                     writeShort( out, listener.getHost().getPort() ); // Port
                     writeString( out, listener.getHost().getHostString() ); // IP
@@ -111,11 +111,11 @@ public class QueryHandler extends SimpleChannelInboundHandler<DatagramPacket>
                     data.put( "gametype", "SMP" );
                     // Start Extra Info
                     data.put( "game_id", "MINECRAFT" );
-                    data.put( "version", bungee.getCustomBungeeName() ); //BotFilter
+                    data.put( "version", bungee.getGameVersion() ); //BotFilter
                     data.put( "plugins", "" );
                     // End Extra Info
-                    data.put( "map", "BotFilter_by_vk.com/Leymooo_s" ); //BotFilter
-                    data.put( "numplayers", Integer.toString( bungee.getOnlineCountBF( true ) ) ); //BotFilter
+                    data.put( "map", "BungeeCord_BotFilter" ); //BotFilter
+                    data.put( "numplayers", Integer.toString( bungee.getOnlineCountBF(true) ) ); //BotFilter
                     data.put( "maxplayers", Integer.toString( listener.getMaxPlayers() ) );
                     data.put( "hostport", Integer.toString( listener.getHost().getPort() ) );
                     data.put( "hostip", listener.getHost().getHostString() );
