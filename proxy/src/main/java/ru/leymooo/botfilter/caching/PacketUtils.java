@@ -150,8 +150,9 @@ public class PacketUtils
 
     private static DefinedPacket createPluginMessage()
     {
+        BungeeCord bungee = BungeeCord.getInstance();
         ByteBuf brand = ByteBufAllocator.DEFAULT.heapBuffer();
-        DefinedPacket.writeString( "BotFilter (https://vk.cc/8hr1pU)", brand );
+        DefinedPacket.writeString( bungee.getName() + " (" + bungee.getVersion() + ")", brand );
         DefinedPacket packet = new PluginMessage( "MC|Brand", DefinedPacket.toArray( brand ), false );
         brand.release();
         return packet;
