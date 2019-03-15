@@ -12,7 +12,7 @@ public class Settings extends Config
     public static final Settings IMP = new Settings();
     
     @Final
-    public String BOT_FILTER_VERSION = "4.0.1";
+    public String BOT_FILTER_VERSION = "4.0.3";
 
     @Comment(
             {
